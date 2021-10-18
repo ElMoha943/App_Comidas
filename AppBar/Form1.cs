@@ -147,8 +147,12 @@ namespace AppBar
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-
-            //...
+            float total = 0;
+            foreach(Comida c in sexo.ticket)
+            {
+                total += c.Precio;
+            }
+            MessageBox.Show("Total a pagar: " + total);
             sexo.ticket.Clear();
             updateGrid();
         }
