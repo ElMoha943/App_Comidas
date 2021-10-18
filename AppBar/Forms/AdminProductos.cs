@@ -12,12 +12,12 @@ using System.IO;
 namespace AppBar
 {
 
-    public partial class Admin : Form
+    public partial class AdminProductos : Form
     {
         DB database = new DB();
         bool editMode = false;
         int id;
-        public Admin()
+        public AdminProductos()
         {
             InitializeComponent();
         }

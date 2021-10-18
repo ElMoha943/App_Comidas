@@ -48,15 +48,15 @@ namespace AppBar
             if (formActual != null)
             {
                 formActual.Close();
-                if (formActual is Admin){
-                    panelRight.Size = new Size(290, 400);
-                }
+                //if (formActual is Admin){
+                //    panelRight.Size = new Size(290, 400);
+                //}
             }
-            if (Category == "Admin")
-            {
-                form = new Admin();
-                panelRight.Size = new Size(0, 0);
-            }
+            //if (Category == "Admin")
+            //{
+            //    form = new Admin();
+            //    panelRight.Size = new Size(0, 0);
+            //}
             else
             {
                 form = new FormDisplay(this, Category);
@@ -105,10 +105,10 @@ namespace AppBar
         }
 
         //BUTTON EVENTS
-        private void btnAdmin_Click(object sender, EventArgs e)
-        {
-            openChildForm("Admin");
-        }
+        //private void btnAdmin_Click(object sender, EventArgs e)
+        //{
+        //    openChildForm("Admin");
+        //}
         private void btnPromos_Click(object sender, EventArgs e)
         {
             openChildForm("Promos");

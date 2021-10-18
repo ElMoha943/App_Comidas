@@ -1,7 +1,7 @@
 ﻿
 namespace AppBar
 {
-    partial class Admin
+    partial class AdminProductos
     {
         /// <summary>
         /// Required designer variable.
