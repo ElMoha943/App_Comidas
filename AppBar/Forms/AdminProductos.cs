@@ -8,23 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using AppBar.Forms;
 
 namespace AppBar
 {
 
-    public partial class Admin : Form
+    public partial class AdminProductos : Form
     {
         DB database = new DB();
         bool editMode = false;
         int id;
-        public Admin()
+        public AdminProductos()
         {
             InitializeComponent();
         }
 
         private void Admin_Load(object sender, EventArgs e)
         {
-            loadTheme();
+            LoadTheme();
             try
             {
                 dataGridView1.DataSource = database.Mostrar();
@@ -36,21 +37,18 @@ namespace AppBar
             }
         }
 
-        public void loadTheme()
+        public void LoadTheme()
         {
-            Color theme = Theme.GetAccentColor();
-            Color light = ControlPaint.Light(theme);
-            Color dark = ControlPaint.Dark(theme);
-            this.BackColor = light;
-            btnAdd.BackColor = theme;
-            btnUpdate.BackColor = theme;
-            btnDelete.BackColor = theme;
-            textboxName.BackColor = theme;
-            textboxName.BorderColor = dark;
-            textboxPrice.BackColor = theme;
-            textboxPrice.BorderColor = dark;
-            textboxCategory.BackColor = theme;
-            textboxCategory.BorderColor = dark;
+            this.BackColor = AdminSettings.lightColor;
+            btnAdd.BackColor = AdminSettings.themeColor;
+            btnUpdate.BackColor = AdminSettings.themeColor;
+            btnDelete.BackColor = AdminSettings.themeColor;
+            textboxName.BackColor = AdminSettings.themeColor;
+            textboxName.BorderColor = AdminSettings.darkColor;
+            textboxPrice.BackColor = AdminSettings.themeColor;
+            textboxPrice.BorderColor = AdminSettings.darkColor;
+            textboxCategory.BackColor = AdminSettings.themeColor;
+            textboxCategory.BorderColor = AdminSettings.darkColor;
         }
 
         private void MostrarProductos()

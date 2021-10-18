@@ -118,10 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="box+document+outline+share+top+upload+icon-1320195323221671611" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\box+document+outline+share+top+upload+icon-1320195323221671611.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pizza_slice_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pizza_slice_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Coming-Soon-Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Coming-Soon-Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pizza-ppal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pizza-ppal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="box+document+outline+share+top+upload+icon-1320195323221671611" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\box+document+outline+share+top+upload+icon-1320195323221671611.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="asuka-evangelion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\asuka-evangelion.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

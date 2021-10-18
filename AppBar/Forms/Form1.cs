@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Win32; //USED FOR THEME CHANGE EVENT
+using AppBar.Forms;
 
 namespace AppBar
 {
     public partial class Form1 : Form
     {
-        private UserPreferenceChangedEventHandler UserPreferenceChanged;
         private Form formActual;
         readonly BindingSource bs = new BindingSource();
 
@@ -23,14 +22,10 @@ namespace AppBar
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            //THEME
             LoadTheme();
-            UserPreferenceChanged = new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
-            SystemEvents.UserPreferenceChanged += UserPreferenceChanged;
-            this.Disposed += new EventHandler(Form_Disposed);
 
             //TICKET DATAGRID
-            bs.DataSource = sexo.ticket;
+            bs.DataSource = ventas.ticket;
             updateGrid();
             dataGridView1.Columns["imagen"].Visible = false;
             dataGridView1.Columns["categoria"].Visible = false;
@@ -45,70 +40,34 @@ namespace AppBar
         private void openChildForm(string Category)
         {
             Form form = new Form();
-            if (formActual != null)
-            {
+            if (formActual != null) 
                 formActual.Close();
-                if (formActual is Admin){
-                    panelRight.Size = new Size(290, 400);
-                }
-            }
-            if (Category == "Admin")
-            {
-                form = new Admin();
-                panelRight.Size = new Size(0, 0);
-            }
-            else
-            {
-                form = new FormDisplay(this, Category);
-            }
+            form = new FormDisplay(this, Category);
             formActual = form;
             form.TopLevel = false;
             panelChild.Controls.Add(form);
             panelChild.Tag = form;
             form.BringToFront();
+            form.BackColor = AdminSettings.lightColor;
             form.Show();
         }
-
-        //THEME METODS
-        private void Form_Disposed(object sender, EventArgs e)
-        {
-            SystemEvents.UserPreferenceChanged -= UserPreferenceChanged;
-        }
-
-        private void SystemEvents_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
-        {
-            if(e.Category==UserPreferenceCategory.General || e.Category == UserPreferenceCategory.VisualStyle)
-            {
-                LoadTheme();
-            }
-        }
-
         private void LoadTheme()
         {
-            var themeColor = Theme.GetAccentColor();
-            var lightColor = ControlPaint.Light(themeColor);
-            var darkColor = ControlPaint.Dark(themeColor);
-            //Apply Color
-            panelTop.BackColor = themeColor;
-            panelLeft.BackColor = darkColor;
-            panelChild.BackColor = lightColor;
-            btnPromos.BackColor = themeColor;
-            btnPizzas.BackColor = themeColor;
-            btnBurguers.BackColor = themeColor;
-            btnFries.BackColor = themeColor;
-            btnDrinks.BackColor = themeColor;
-            btnDeserts.BackColor = themeColor;
-            btnBuy.BackColor = themeColor;
-            btnCancel.BackColor = themeColor;
-
-            if (formActual != null) formActual.BackColor = lightColor;
+            panelTop.BackColor = AdminSettings.themeColor;
+            panelLeft.BackColor = AdminSettings.darkColor;
+            panelChild.BackColor = AdminSettings.lightColor;
+            btnPromos.BackColor = AdminSettings.themeColor;
+            btnPizzas.BackColor = AdminSettings.themeColor;
+            btnBurguers.BackColor = AdminSettings.themeColor;
+            btnFries.BackColor = AdminSettings.themeColor;
+            btnDrinks.BackColor = AdminSettings.themeColor;
+            btnDeserts.BackColor = AdminSettings.themeColor;
+            btnBuy.BackColor = AdminSettings.themeColor;
+            btnCancel.BackColor = AdminSettings.themeColor;
+            btnLogout.BackColor = AdminSettings.themeColor;
         }
 
         //BUTTON EVENTS
-        private void btnAdmin_Click(object sender, EventArgs e)
-        {
-            openChildForm("Admin");
-        }
         private void btnPromos_Click(object sender, EventArgs e)
         {
             openChildForm("Promos");
@@ -141,25 +100,30 @@ namespace AppBar
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            sexo.ticket.Clear();
+            ventas.ticket.Clear();
             updateGrid();
         }
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
             float total = 0;
-            foreach(Comida c in sexo.ticket)
+            foreach(Comida c in ventas.ticket)
             {
                 total += c.Precio;
             }
             MessageBox.Show("Total a pagar: " + total);
-            sexo.ticket.Clear();
+            ventas.ticket.Clear();
             updateGrid();
         }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Login.me.Show();
+            this.Close();
+        }
     }
 
-    public static class sexo
+    public static class ventas
     {
         public static List<Comida> ticket = new List<Comida>();
     }

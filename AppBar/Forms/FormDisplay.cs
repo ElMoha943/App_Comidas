@@ -84,7 +84,7 @@ namespace AppBar
 
         private void addItem(object sender, EventArgs e, Comida food)
         {
-            sexo.ticket.Add(food);
+            ventas.ticket.Add(food);
             form.updateGrid();
         }
 

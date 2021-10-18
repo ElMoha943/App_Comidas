@@ -63,6 +63,16 @@ namespace AppBar.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap asuka_evangelion {
+            get {
+                object obj = ResourceManager.GetObject("asuka-evangelion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap box_document_outline_share_top_upload_icon_1320195323221671611 {
             get {
                 object obj = ResourceManager.GetObject("box+document+outline+share+top+upload+icon-1320195323221671611", resourceCulture);
@@ -73,9 +83,29 @@ namespace AppBar.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Coming_Soon_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Coming-Soon-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pizza_ppal {
             get {
                 object obj = ResourceManager.GetObject("pizza-ppal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pizza_slice_icon {
+            get {
+                object obj = ResourceManager.GetObject("Pizza_slice_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
