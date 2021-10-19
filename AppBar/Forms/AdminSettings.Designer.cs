@@ -46,9 +46,9 @@ namespace AppBar.Forms
             this.labelSetAdminpass = new System.Windows.Forms.Label();
             this.labelSetUserpass = new System.Windows.Forms.Label();
             this.btnSetUserpass = new RJCodeAdvance.RJControls.RJButton();
-            this.textboxSetAdminpass = new RJCodeAdvance.RJControls.RJTextBox();
-            this.btnSetAdminpass = new RJCodeAdvance.RJControls.RJButton();
             this.textboxSetUserpass = new RJCodeAdvance.RJControls.RJTextBox();
+            this.btnSetAdminpass = new RJCodeAdvance.RJControls.RJButton();
+            this.textboxSetAdminpass = new RJCodeAdvance.RJControls.RJTextBox();
             this.panelRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             this.panelCenter.SuspendLayout();
@@ -63,9 +63,9 @@ namespace AppBar.Forms
             this.panelRight.Controls.Add(this.labelSpam);
             this.panelRight.Controls.Add(this.rjCircularPictureBox1);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelRight.Location = new System.Drawing.Point(597, 0);
+            this.panelRight.Location = new System.Drawing.Point(604, 0);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(293, 400);
+            this.panelRight.Size = new System.Drawing.Size(286, 400);
             this.panelRight.TabIndex = 0;
             // 
             // iconDiscord
@@ -153,13 +153,13 @@ namespace AppBar.Forms
             this.panelCenter.Controls.Add(this.labelSetAdminpass);
             this.panelCenter.Controls.Add(this.labelSetUserpass);
             this.panelCenter.Controls.Add(this.btnSetUserpass);
-            this.panelCenter.Controls.Add(this.textboxSetAdminpass);
-            this.panelCenter.Controls.Add(this.btnSetAdminpass);
             this.panelCenter.Controls.Add(this.textboxSetUserpass);
+            this.panelCenter.Controls.Add(this.btnSetAdminpass);
+            this.panelCenter.Controls.Add(this.textboxSetAdminpass);
             this.panelCenter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCenter.Location = new System.Drawing.Point(0, 0);
             this.panelCenter.Name = "panelCenter";
-            this.panelCenter.Size = new System.Drawing.Size(597, 400);
+            this.panelCenter.Size = new System.Drawing.Size(604, 400);
             this.panelCenter.TabIndex = 1;
             // 
             // comboboxSetTheme
@@ -302,27 +302,27 @@ namespace AppBar.Forms
             this.btnSetUserpass.UseVisualStyleBackColor = false;
             this.btnSetUserpass.Click += new System.EventHandler(this.btnSetUserpass_Click);
             // 
-            // textboxSetAdminpass
+            // textboxSetUserpass
             // 
-            this.textboxSetAdminpass.BackColor = System.Drawing.SystemColors.Window;
-            this.textboxSetAdminpass.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.textboxSetAdminpass.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textboxSetAdminpass.BorderRadius = 0;
-            this.textboxSetAdminpass.BorderSize = 2;
-            this.textboxSetAdminpass.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxSetAdminpass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textboxSetAdminpass.Location = new System.Drawing.Point(182, 106);
-            this.textboxSetAdminpass.Margin = new System.Windows.Forms.Padding(4);
-            this.textboxSetAdminpass.Multiline = false;
-            this.textboxSetAdminpass.Name = "textboxSetAdminpass";
-            this.textboxSetAdminpass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.textboxSetAdminpass.PasswordChar = true;
-            this.textboxSetAdminpass.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.textboxSetAdminpass.PlaceholderText = "";
-            this.textboxSetAdminpass.Size = new System.Drawing.Size(250, 32);
-            this.textboxSetAdminpass.TabIndex = 17;
-            this.textboxSetAdminpass.Texts = "";
-            this.textboxSetAdminpass.UnderlinedStyle = false;
+            this.textboxSetUserpass.BackColor = System.Drawing.SystemColors.Window;
+            this.textboxSetUserpass.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.textboxSetUserpass.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textboxSetUserpass.BorderRadius = 0;
+            this.textboxSetUserpass.BorderSize = 2;
+            this.textboxSetUserpass.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxSetUserpass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textboxSetUserpass.Location = new System.Drawing.Point(182, 106);
+            this.textboxSetUserpass.Margin = new System.Windows.Forms.Padding(4);
+            this.textboxSetUserpass.Multiline = false;
+            this.textboxSetUserpass.Name = "textboxSetUserpass";
+            this.textboxSetUserpass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.textboxSetUserpass.PasswordChar = true;
+            this.textboxSetUserpass.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textboxSetUserpass.PlaceholderText = "";
+            this.textboxSetUserpass.Size = new System.Drawing.Size(250, 32);
+            this.textboxSetUserpass.TabIndex = 17;
+            this.textboxSetUserpass.Texts = "";
+            this.textboxSetUserpass.UnderlinedStyle = false;
             // 
             // btnSetAdminpass
             // 
@@ -344,27 +344,27 @@ namespace AppBar.Forms
             this.btnSetAdminpass.UseVisualStyleBackColor = false;
             this.btnSetAdminpass.Click += new System.EventHandler(this.btnSetAdminpass_Click);
             // 
-            // textboxSetUserpass
+            // textboxSetAdminpass
             // 
-            this.textboxSetUserpass.BackColor = System.Drawing.SystemColors.Window;
-            this.textboxSetUserpass.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.textboxSetUserpass.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textboxSetUserpass.BorderRadius = 0;
-            this.textboxSetUserpass.BorderSize = 2;
-            this.textboxSetUserpass.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.textboxSetUserpass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textboxSetUserpass.Location = new System.Drawing.Point(182, 152);
-            this.textboxSetUserpass.Margin = new System.Windows.Forms.Padding(4);
-            this.textboxSetUserpass.Multiline = false;
-            this.textboxSetUserpass.Name = "textboxSetUserpass";
-            this.textboxSetUserpass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.textboxSetUserpass.PasswordChar = true;
-            this.textboxSetUserpass.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.textboxSetUserpass.PlaceholderText = "";
-            this.textboxSetUserpass.Size = new System.Drawing.Size(250, 32);
-            this.textboxSetUserpass.TabIndex = 15;
-            this.textboxSetUserpass.Texts = "";
-            this.textboxSetUserpass.UnderlinedStyle = false;
+            this.textboxSetAdminpass.BackColor = System.Drawing.SystemColors.Window;
+            this.textboxSetAdminpass.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.textboxSetAdminpass.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.textboxSetAdminpass.BorderRadius = 0;
+            this.textboxSetAdminpass.BorderSize = 2;
+            this.textboxSetAdminpass.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.textboxSetAdminpass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textboxSetAdminpass.Location = new System.Drawing.Point(182, 152);
+            this.textboxSetAdminpass.Margin = new System.Windows.Forms.Padding(4);
+            this.textboxSetAdminpass.Multiline = false;
+            this.textboxSetAdminpass.Name = "textboxSetAdminpass";
+            this.textboxSetAdminpass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.textboxSetAdminpass.PasswordChar = true;
+            this.textboxSetAdminpass.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textboxSetAdminpass.PlaceholderText = "";
+            this.textboxSetAdminpass.Size = new System.Drawing.Size(250, 32);
+            this.textboxSetAdminpass.TabIndex = 15;
+            this.textboxSetAdminpass.Texts = "";
+            this.textboxSetAdminpass.UnderlinedStyle = false;
             // 
             // AdminSettings
             // 
@@ -403,9 +403,9 @@ namespace AppBar.Forms
         private System.Windows.Forms.Label labelSetAdminpass;
         private System.Windows.Forms.Label labelSetUserpass;
         private RJCodeAdvance.RJControls.RJButton btnSetUserpass;
-        private RJCodeAdvance.RJControls.RJTextBox textboxSetAdminpass;
-        private RJCodeAdvance.RJControls.RJButton btnSetAdminpass;
         private RJCodeAdvance.RJControls.RJTextBox textboxSetUserpass;
+        private RJCodeAdvance.RJControls.RJButton btnSetAdminpass;
+        private RJCodeAdvance.RJControls.RJTextBox textboxSetAdminpass;
         private FontAwesome.Sharp.IconButton iconDiscord;
         private FontAwesome.Sharp.IconButton iconTwitter;
     }

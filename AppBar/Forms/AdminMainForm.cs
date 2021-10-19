@@ -22,8 +22,15 @@ namespace AppBar
         public AdminMainForm()
         {
             InitializeComponent();
-            LoadTheme();
             Me = this;
+        }
+
+        private void AdminMainForm_Load(object sender, EventArgs e)
+        {
+            LoadTheme();
+            //OPEN PRODUCTS FORM
+            openChildForm("Productos");
+            btnProducts.BackColor = AdminSettings.lightColor;
         }
 
         private void LoadTheme()
@@ -68,22 +75,39 @@ namespace AppBar
         private void btnProducts_Click(object sender, EventArgs e)
         {
             openChildForm("Productos");
+            btnProducts.BackColor = AdminSettings.lightColor;
+            btnVentas.BackColor = AdminSettings.themeColor;
+            btnSettings.BackColor = AdminSettings.themeColor;
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
             openChildForm("Ventas");
+            btnProducts.BackColor = AdminSettings.themeColor;
+            btnVentas.BackColor = AdminSettings.lightColor;
+            btnSettings.BackColor = AdminSettings.themeColor;
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
             openChildForm("Opciones");
+            btnProducts.BackColor = AdminSettings.themeColor;
+            btnVentas.BackColor = AdminSettings.themeColor;
+            btnSettings.BackColor = AdminSettings.lightColor;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {    
             Login.me.Show();
             this.Close();
+        }
+
+        private void AdminMainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!Login.me.Visible)
+            {
+                Environment.Exit(0);
+            }
         }
     }
 }
