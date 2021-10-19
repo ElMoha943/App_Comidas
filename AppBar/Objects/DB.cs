@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -6,7 +7,7 @@ namespace AppBar
 {
     class DB
     {
-        private SqlConnection Conexion = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=comida;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        private readonly SqlConnection Conexion = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=comida;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public SqlConnection AbrirConexion()
         {
             if (Conexion.State == ConnectionState.Closed)
@@ -22,14 +23,47 @@ namespace AppBar
         }
 
         SqlDataReader leer;
-        DataTable tabla = new DataTable();
-        SqlCommand comando = new SqlCommand();
+        readonly DataTable tabla = new DataTable();
+        readonly SqlCommand comando = new SqlCommand();
 
-        //MUESTRA TODOS LOS productos
-        public DataTable Mostrar()
+        //CREA UNA NUEVA VENTA
+        public void InsertarV(float total, DateTime fecha, List<Comida> Productos)
         {
             comando.Connection = AbrirConexion();
-            comando.CommandText = "select * from productos;";
+            comando.CommandText = "INSERT INTO ventas output INSERTED.ID VALUES(@total, @fecha)";
+            comando.CommandType = CommandType.Text;
+            comando.Parameters.AddWithValue("@total", total);
+            comando.Parameters.AddWithValue("@fecha", fecha);
+            int id = (int)comando.ExecuteScalar();
+            comando.Parameters.Clear();
+            foreach (Comida c in Productos)
+            {
+                comando.CommandText = "INSERT INTO ventas_prod VALUES(@nombre, @precio, @id_venta)";
+                comando.CommandType = CommandType.Text;
+                comando.Parameters.AddWithValue("@nombre", c.Nombre);
+                comando.Parameters.AddWithValue("@precio", c.Precio);
+                comando.Parameters.AddWithValue("@id_venta", id);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+            }
+            CerrarConexion();
+        }
+
+        //MUESTRA TODOS LOS PRODUCTOS/VENTAS
+        public DataTable Mostrar(string table)
+        {
+            comando.Connection = AbrirConexion();
+            comando.CommandText = "select * from "+table+";";
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            CerrarConexion();
+            return tabla;
+        }
+
+        public DataTable Mostrarpv(int id)
+        {
+            comando.Connection = AbrirConexion();
+            comando.CommandText = "select * from ventas_prod where id_venta = "+ id +";";
             leer = comando.ExecuteReader();
             tabla.Load(leer);
             CerrarConexion();
@@ -49,6 +83,7 @@ namespace AppBar
             comando.Parameters.AddWithValue("@categoria", categoria);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
+            CerrarConexion();
         }
 
         //EDITA UN PRODUCTO
@@ -64,6 +99,7 @@ namespace AppBar
             comando.Parameters.AddWithValue("@categoria", categoria);
             comando.Parameters.AddWithValue("@id", id);
             comando.ExecuteNonQuery();
+            CerrarConexion();
         }
 
         //ELIMINA UN PRODUCTO
@@ -72,6 +108,7 @@ namespace AppBar
             comando.Connection = AbrirConexion();
             comando.CommandText = "DELETE FROM productos WHERE id=" + id + ";";
             comando.ExecuteNonQuery();
+            CerrarConexion();
         }
 
         //BUSCA UN PRODUCTO EN ESPECIFICO

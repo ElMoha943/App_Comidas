@@ -23,7 +23,7 @@ namespace AppBar
             this.BackColor = ControlPaint.Light(Theme.GetAccentColor());
             int x = 0 , y = 0, cant=0;
             InitializeComponent();
-            dt = database.Mostrar();
+            dt = database.Mostrar("productos");
             Console.WriteLine("Entrys: " + dt.Rows.Count);
             for (int i = 0; i < dt.Rows.Count; i++)
             {

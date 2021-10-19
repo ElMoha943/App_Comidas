@@ -85,5 +85,13 @@ namespace AppBar
             Login.me.Show();
             this.Close();
         }
+
+        private void AdminMainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!Login.me.Visible)
+            {
+                Environment.Exit(0);
+            }
+        }
     }
 }

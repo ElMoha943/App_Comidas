@@ -28,7 +28,7 @@ namespace AppBar
             LoadTheme();
             try
             {
-                dataGridView1.DataSource = database.Mostrar();
+                dataGridView1.DataSource = database.Mostrar("productos");
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex)
@@ -54,7 +54,7 @@ namespace AppBar
         private void MostrarProductos()
         {
             DB database = new DB(); //REFRESCA EL OBJETO
-            dataGridView1.DataSource = database.Mostrar();
+            dataGridView1.DataSource = database.Mostrar("productos");
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

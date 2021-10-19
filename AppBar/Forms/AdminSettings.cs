@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace AppBar.Forms
 {
@@ -40,7 +41,7 @@ namespace AppBar.Forms
             darkColor = ControlPaint.Dark(themeColor);
             //Unused Colors
             slightColor = ControlPaint.LightLight(themeColor);
-            sdarkColor = ControlPaint.DarkDark(themeColor);
+            sdarkColor = ControlPaint.DarkDark(themeColor);  
         }
 
         private void LoadTheme()
@@ -55,8 +56,8 @@ namespace AppBar.Forms
             btnSyncDate.BorderColor = darkColor;
             btnSyncTheme.BackColor = themeColor;
             btnSyncTheme.BorderColor = darkColor;
-            textboxSetAdminpass.BorderColor = darkColor;
             textboxSetUserpass.BorderColor = darkColor;
+            textboxSetAdminpass.BorderColor = darkColor;
             comboboxSetTheme.BorderColor = darkColor;
             datePicker.SkinColor = themeColor;
             datePicker.BorderColor = darkColor;
@@ -71,33 +72,75 @@ namespace AppBar.Forms
             {
                 case "rojo":
                     themeColor = Color.FromArgb(232,17,35);
+                    AdminVentas.Pallete = ChartColorPalette.Fire;
                     break;
                 case "amarillo":
                     themeColor = Color.FromArgb(255, 140, 0);
+                    AdminVentas.Pallete = ChartColorPalette.EarthTones;
                     break;
                 case "verde":
                     themeColor = Color.FromArgb(0, 204, 106);
+                    AdminVentas.Pallete = ChartColorPalette.BrightPastel;
                     break;
                 case "azul":
                     themeColor = Color.FromArgb(0, 99, 177);
+                    AdminVentas.Pallete = ChartColorPalette.SeaGreen;
                     break;
                 case "morado":
                     themeColor = Color.FromArgb(116, 77, 169);
+                    AdminVentas.Pallete = ChartColorPalette.Berry;
                     break;
             }
             ChangeColors(themeColor);
+            LoadTheme();
         }
 
+
+        private bool validatePassword(string pass)
+        {
+            bool upper = false, lower = false, digit = false, simbol = false, len = false;
+            if (pass.Length >= 8) len = true;
+            for (int i = 0; i < pass.Length; i++)
+            {
+                if (Char.IsUpper(pass, i)) upper = true;
+                else if (Char.IsLower(pass, i)) lower = true;
+                else if (Char.IsDigit(pass, i)) digit = true;
+                else simbol = true;
+            }
+            if (upper == true && lower == true && digit == true && len == true)
+                return true;
+            else
+                return false;
+        }
         private void btnSetUserpass_Click(object sender, EventArgs e)
         {
-            Login.UserPass = textboxSetUserpass.Texts;
-            MessageBox.Show("Contraseña cambiada!");
+            if (validatePassword(textboxSetUserpass.Texts))
+            {
+                Login.UserPass = textboxSetUserpass.Texts;
+                MessageBox.Show("Contraseña cambiada!");
+            }
+            else
+            {
+                ToolTip myToolTip = new ToolTip();
+                myToolTip.IsBalloon = true;
+                myToolTip.Show("Esa contraseña no es valida", this.textboxSetUserpass);
+            }  
         }
 
         private void btnSetAdminpass_Click(object sender, EventArgs e)
         {
-            Login.AdminPass = textboxSetAdminpass.Texts;
-            MessageBox.Show("Contraseña cambiada!");
+            if (validatePassword(textboxSetAdminpass.Texts))
+            {
+                Login.AdminPass = textboxSetAdminpass.Texts;
+                MessageBox.Show("Contraseña cambiada!");
+            }
+            else
+            {
+                ToolTip myToolTip = new ToolTip();
+                myToolTip.IsBalloon = true;
+                myToolTip.Show("Esa contraseña no es valida", this.textboxSetAdminpass);
+            }
+                
         }
 
         private void iconGithub_Click(object sender, EventArgs e)
