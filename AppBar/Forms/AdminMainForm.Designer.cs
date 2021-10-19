@@ -188,6 +188,7 @@ namespace AppBar
             this.Name = "AdminMainForm";
             this.Text = "AppBar | Administracion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminMainForm_FormClosing);
+            this.Load += new System.EventHandler(this.AdminMainForm_Load);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             this.panelLeft.ResumeLayout(false);

@@ -30,6 +30,7 @@ namespace AppBar
             {
                 dataGridView1.DataSource = database.Mostrar("productos");
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.BackgroundColor = AdminSettings.themeColor;
             }
             catch (Exception ex)
             {

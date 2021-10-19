@@ -31,6 +31,10 @@ namespace AppBar
             updateGrid();
             dataGridView1.Columns["imagen"].Visible = false;
             dataGridView1.Columns["categoria"].Visible = false;
+
+            //OPEN PROMOS FORM
+            openChildForm("Promos");
+            btnPromos.BackColor = AdminSettings.lightColor;
         }
 
         public void updateGrid()
@@ -58,12 +62,7 @@ namespace AppBar
             panelTop.BackColor = AdminSettings.themeColor;
             panelLeft.BackColor = AdminSettings.darkColor;
             panelChild.BackColor = AdminSettings.lightColor;
-            btnPromos.BackColor = AdminSettings.themeColor;
-            btnPizzas.BackColor = AdminSettings.themeColor;
-            btnBurguers.BackColor = AdminSettings.themeColor;
-            btnFries.BackColor = AdminSettings.themeColor;
-            btnDrinks.BackColor = AdminSettings.themeColor;
-            btnDeserts.BackColor = AdminSettings.themeColor;
+            resetBtnColor();
             btnBuy.BackColor = AdminSettings.themeColor;
             btnCancel.BackColor = AdminSettings.themeColor;
             btnLogout.BackColor = AdminSettings.themeColor;
@@ -71,35 +70,57 @@ namespace AppBar
             dataGridView1.GridColor = AdminSettings.darkColor;
         }
 
+        private void resetBtnColor()
+        {
+            btnPromos.BackColor = AdminSettings.themeColor;
+            btnPizzas.BackColor = AdminSettings.themeColor;
+            btnBurguers.BackColor = AdminSettings.themeColor;
+            btnFries.BackColor = AdminSettings.themeColor;
+            btnDrinks.BackColor = AdminSettings.themeColor;
+            btnDeserts.BackColor = AdminSettings.themeColor;
+        }
+
         //BUTTON EVENTS
         private void btnPromos_Click(object sender, EventArgs e)
         {
             openChildForm("Promos");
+            resetBtnColor();
+            btnPromos.BackColor = AdminSettings.lightColor;
         }
 
         private void btnPizzas_Click(object sender, EventArgs e)
         {
             openChildForm("Pizzas");
+            resetBtnColor();
+            btnPizzas.BackColor = AdminSettings.lightColor;
         }
 
         private void btnBurguers_Click(object sender, EventArgs e)
         {
             openChildForm("Burguers");
+            resetBtnColor();
+            btnBurguers.BackColor = AdminSettings.lightColor;
         }
 
         private void btnFries_Click(object sender, EventArgs e)
         {
             openChildForm("Fries");
+            resetBtnColor();
+            btnFries.BackColor = AdminSettings.lightColor;
         }
 
         private void btnDrinks_Click(object sender, EventArgs e)
         {
             openChildForm("Drinks");
+            resetBtnColor();
+            btnDrinks.BackColor = AdminSettings.lightColor;
         }
 
         private void btnDeserts_Click(object sender, EventArgs e)
         {
             openChildForm("Deserts");
+            resetBtnColor();
+            btnDeserts.BackColor = AdminSettings.lightColor;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
