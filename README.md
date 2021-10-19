@@ -12,6 +12,5 @@ App de menu para empresa de comida rapida o restaurantes.
 ![image](https://user-images.githubusercontent.com/25410859/137996809-4fc9c0d6-a619-4b1a-92c9-696a7c77fd55.png)
 
 ### User Panel
-![image](https://user-images.githubusercontent.com/25410859/137996903-2c1d0f0a-a922-49c1-b6ca-2672efd34f45.png)
-
+![image](https://user-images.githubusercontent.com/25410859/137997584-2b5faaed-ce7e-47be-81cf-c64b46922e0c.png)
 
