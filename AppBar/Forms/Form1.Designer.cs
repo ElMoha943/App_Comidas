@@ -31,6 +31,7 @@ namespace AppBar
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelTop = new System.Windows.Forms.Panel();
             this.btnBuy = new FontAwesome.Sharp.IconButton();
             this.btnCancel = new FontAwesome.Sharp.IconButton();
@@ -383,8 +384,9 @@ namespace AppBar
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Menu";
+            this.Text = "AppBar | Menu Cliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelTop.ResumeLayout(false);
